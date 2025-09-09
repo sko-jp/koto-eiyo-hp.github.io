@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>江東区地域活動栄養士会</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>江東区地域活動栄養士会</h1>
+        <p>地域の健康と食育を支える、江東区の栄養士ネットワーク</p>
+        <!-- 田植え画像は一時的に非表示 -->
+      </header>
+      <nav>
+        <a href="#purpose" class="nav-btn">🌱 会の目的</a>
+        <a href="#activities" class="nav-btn">👨‍👩‍👧‍👦 主な活動</a>
+        <a href="#recognition" class="nav-btn">🤝 地域との連携</a>
+        <a href="#contact" class="nav-btn">✉️ お問い合わせ</a>
+      </nav>
+      <section id="purpose" class="purpose">
+        <h2>🌱 会の目的</h2>
+        <p>新しい医学・栄養学の成果を学び、会員の素質向上をはかるとともに、地域社会の栄養改善及び健康増進に協力し、あわせて会員相互の親睦をはかる。</p>
+      </section>
+      <section id="activities">
+        <h2>👨‍👩‍👧‍👦 主な活動</h2>
+        <ul class="activity-list">
+          <li>年に数回、会員による勉強会を開催</li>
+          <li>江東区保健所主催イベント「食と健康展」等への出展</li>
+          <li>会長が江東区主催「おいしいメニューコンクール」審査員を毎年担当</li>
+          <li>江東区食育推進事業「江東区家庭料理検定」取得による食育への理解促進</li>
+          <li>地域社会の栄養改善・健康増進への協力</li>
+          <li>会員素質向上・親睦活動</li>
+        </ul>
+        <div class="highlight">
+          <strong>2025年12月予定：</strong>自分達で田植えを行った収穫米を使った親子調理実習を開催予定です。
+        </div>
+      </section>
+  <section id="recognition" class="purpose">
+        <h2>🤝 地域との連携</h2>
+        <p>
+          江東区の食育推進事業や地域イベントに参加し、健康づくりや食育活動に協力しています。<br>
+          また、会員の専門性向上や親睦を図る活動も行っています。
+        </p>
+      </section>
+      <section id="contact">
+        <h2>✉️ お問い合わせ</h2>
+        <form id="contactForm">
+          <label for="name">お名前：</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">メールアドレス：</label>
+          <input type="email" id="email" name="email" required />
+          <label for="message">お問い合わせ内容：</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <button type="submit">送信</button>
+        </form>
+        <div id="formResult" style="color:green; margin-top:1rem;"></div>
+      </section>
+      <footer>
+        <p>&copy; 2025 江東区地域活動栄養士会</p>
+      </footer>
+    </div>
+    <script>
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('formResult').textContent = 'お問い合わせを受け付けました。ありがとうございました。';
+        this.reset();
+      });
+    </script>
+  </body>
+</html>
