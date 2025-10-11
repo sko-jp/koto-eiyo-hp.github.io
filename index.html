@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>江東区地域活動栄養士会</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Googleフォームの埋め込みをレスポンシブにする簡易スタイル */
+      .form-embed {
+        position: relative;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .form-embed iframe {
+        width: 100%;
+        height: 800px;
+        border: 0;
+      }
+      @media (max-width: 600px) {
+        .form-embed iframe {
+          height: 1000px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -21,7 +40,7 @@
       </nav>
       <section id="purpose" class="purpose">
         <h2>🌱 会の目的</h2>
-        <p>新しい医学・栄養学の成果を学び、会員の素質向上をはかるとともに、地域社会の栄養改善及び健康増進に協力し、あわせて会員相互の親睦をはかる。</p>
+        <p>新しい医学・栄養学の成果を学び、会員の素質向上をはかるとともに、地域社会の栄養改善及び健康増進に協力し、あわせて会員相互の親睦[...]</p>
       </section>
       <section id="activities">
         <h2>👨‍👩‍👧‍👦 主な活動</h2>
@@ -37,7 +56,7 @@
           <strong>2025年12月予定：</strong>自分達で田植えを行った収穫米を使った親子調理実習を開催予定です。
         </div>
       </section>
-  <section id="recognition" class="purpose">
+      <section id="recognition" class="purpose">
         <h2>🤝 地域との連携</h2>
         <p>
           江東区の食育推進事業や地域イベントに参加し、健康づくりや食育活動に協力しています。<br>
@@ -45,29 +64,23 @@
         </p>
       </section>
       <section id="contact">
-        <h2>✉️ お問い合わせ(作成中につき実際のお問合せは出来ません)</h2>
-        <form id="contactForm">
-          <label for="name">お名前：</label>
-          <input type="text" id="name" name="name" required />
-          <label for="email">メールアドレス：</label>
-          <input type="email" id="email" name="email" required />
-          <label for="message">お問い合わせ内容：</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-          <button type="submit">送信</button>
-        </form>
-        <div id="formResult" style="color:green; margin-top:1rem;"></div>
+        <h2>✉️ お問い合わせ</h2>
+        <p>以下のGoogleフォームからお問い合わせください。</p>
+        <div class="form-embed">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYB_rXoVY-4w1LCNFaGI0986FPZkSUGfCt-x95t-EcuHwzLg/viewform?embedded=true" 
+                  title="江東区地域活動栄養士会 お問い合わせフォーム"
+                  loading="lazy"
+                  aria-label="お問い合わせフォーム">
+            読み込んでいます…
+          </iframe>
+        </div>
+        <p style="font-size:0.9rem; color: #666;">
+          ※このフォームは外部サービス（Googleフォーム）を利用しています。送信内容はGoogleのプライバシーポリシーに従って処理されます。
+        </p>
       </section>
       <footer>
         <p>&copy; 2025 江東区地域活動栄養士会</p>
       </footer>
     </div>
-    <script>
-      document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        document.getElementById('formResult').textContent = 'お問い合わせを受け付けました。ありがとうございました。';
-        this.reset();
-      });
-    </script>
   </body>
 </html>
-
