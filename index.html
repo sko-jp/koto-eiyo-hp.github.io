@@ -4,121 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Koto Eiyo HP</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
     <style>
-        .activity-report { margin: 20px; }
-        .activity-items { display: flex; flex-wrap: wrap; }
-        .activity-card { border: 1px solid #ccc; border-radius: 8px; margin: 10px; padding: 10px; width: 200px; }
-        .activity-date { font-size: 12px; color: gray; }
-        .activity-title { font-weight: bold; }
-        .activity-details { margin-top: 10px; }
+        /* CSS styles for responsive grid layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .activity-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <h1>主な活動</h1>
-    <section class="activity-report">
-        <h2>FY2025 活動結果</h2>
-        <div class="activity-items">
+    <header>
+        <h1>Koto Eiyo HP</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#purpose">Purpose</a></li>
+            <li><a href="#activities">Activities</a></li>
+            <li><a href="#recognition">Recognition</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="purpose">
+        <h2>Purpose</h2>
+        <p>Description of the purpose goes here.</p>
+    </section>
+    <section id="activities">
+        <h2>Activities</h2>
+        <div class="grid-container">
             <div class="activity-card">
-                <img src="fy2025/IMG_20250601_111113.jpg" alt="Food and agriculture project① planting">
-                <div class="activity-date">2026-06-01</div>
-                <div class="activity-title">Food and agriculture project① planting</div>
-                <div class="activity-details">
-                    Location: [Location details]<br>
-                    Participants: [Participants details]<br>
-                    Description: [Description details]
-                </div>
+                <img src="fy2025/activity1.jpg" alt="Activity 1">
+                <h3>活動1タイトル</h3>
+                <p>活動1の詳細がここに入ります。</p>
             </div>
             <div class="activity-card">
-                <img src="fy2025/1765160552646.jpg" alt="Motokaga kindergarten food education program①">
-                <div class="activity-date">2026-04-23</div>
-                <div class="activity-title">Motokaga kindergarten food education program①</div>
-                <div class="activity-details">
-                    Location: [Location details]<br>
-                    Participants: [Participants details]<br>
-                    Description: [Description details]
-                </div>
+                <img src="fy2025/activity2.jpg" alt="Activity 2">
+                <h3>活動2タイトル</h3>
+                <p>活動2の詳細がここに入ります。</p>
             </div>
             <div class="activity-card">
-                <img src="fy2025/IMG_20250601_135835.jpg" alt="Food and agriculture project② harvesting">
-                <div class="activity-date">2026-09-07</div>
-                <div class="activity-title">Food and agriculture project② harvesting</div>
-                <div class="activity-details">
-                    Location: [Location details]<br>
-                    Participants: [Participants details]<br>
-                    Description: [Description details]
-                </div>
+                <img src="fy2025/activity3.jpg" alt="Activity 3">
+                <h3>活動3タイトル</h3>
+                <p>活動3の詳細がここに入ります。</p>
             </div>
             <div class="activity-card">
-                <img src="fy2025/1765160552782.jpg" alt="Citizen's festival">
-                <div class="activity-date">2026-10-19</div>
-                <div class="activity-title">Citizen's festival</div>
-                <div class="activity-details">
-                    Location: [Location details]<br>
-                    Participants: [Participants details]<br>
-                    Description: [Description details]
-                </div>
+                <img src="fy2025/activity4.jpg" alt="Activity 4">
+                <h3>活動4タイトル</h3>
+                <p>活動4の詳細がここに入ります。</p>
             </div>
             <div class="activity-card">
-                <img src="fy2025/1ea3f66f-62a3-4979-95d1-1c4788f034c9_20251003_143708_0000.jpg" alt="Shidai Ooshima Elementary School festival">
-                <div class="activity-date">2026-11-08</div>
-                <div class="activity-title">Shidai Ooshima Elementary School festival</div>
-                <div class="activity-details">
-                    Location: [Location details]<br>
-                    Participants: [Participants details]<br>
-                    Description: [Description details]
-                </div>
+                <img src="fy2025/activity5.jpg" alt="Activity 5">
+                <h3>活動5タイトル</h3>
+                <p>活動5の詳細がここに入ります。</p>
             </div>
             <div class="activity-card">
-                <img src="fy2025/IMG20251005103854.jpg" alt="Food and agriculture project parent-child cooking class">
-                <div class="activity-date">2026-12-07</div>
-                <div class="activity-title">Food and agriculture project parent-child cooking class</div>
-                <div class="activity-details">
-                    Location: [Location details]<br>
-                    Participants: [Participants details]<br>
-                    Description: [Description details]
-                </div>
+                <img src="fy2025/activity6.jpg" alt="Activity 6">
+                <h3>活動6タイトル</h3>
+                <p>活動6の詳細がここに入ります。</p>
             </div>
             <div class="activity-card">
-                <img src="fy2025/1765094605229.jpg" alt="Pre-mama food talk">
-                <div class="activity-date">2026-12-13</div>
-                <div class="activity-title">Pre-mama food talk</div>
-                <div class="activity-details">
-                    Location: [Location details]<br>
-                    Participants: [Participants details]<br>
-                    Description: [Description details]
-                </div>
+                <img src="fy2025/activity7.jpg" alt="Activity 7">
+                <h3>活動7タイトル</h3>
+                <p>活動7の詳細がここに入ります。</p>
             </div>
             <div class="activity-card">
-                <img src="fy2025/IMG_20260424_192747.jpg" alt="Hongo junior high school rugby team cooking class①">
-                <div class="activity-date">2026-12-22</div>
-                <div class="activity-title">Hongo junior high school rugby team cooking class①</div>
-                <div class="activity-details">
-                    Location: [Location details]<br>
-                    Participants: [Participants details]<br>
-                    Description: [Description details]
-                </div>
+                <img src="fy2025/activity8.jpg" alt="Activity 8">
+                <h3>活動8タイトル</h3>
+                <p>活動8の詳細がここに入ります。</p>
             </div>
             <div class="activity-card">
-                <img src="fy2025/IMG20260301100022.jpg" alt="La-kan festival disaster food event">
-                <div class="activity-date">2027-03-01</div>
-                <div class="activity-title">La-kan festival disaster food event</div>
-                <div class="activity-details">
-                    Location: [Location details]<br>
-                    Participants: [Participants details]<br>
-                    Description: [Description details]
-                </div>
+                <img src="fy2025/activity9.jpg" alt="Activity 9">
+                <h3>活動9タイトル</h3>
+                <p>活動9の詳細がここに入ります。</p>
             </div>
             <div class="activity-card">
-                <img src="fy2025/IMG_20260424_194009.jpg" alt="Hongo junior high school rugby team cooking class②">
-                <div class="activity-date">2027-03-12</div>
-                <div class="activity-title">Hongo junior high school rugby team cooking class②</div>
-                <div class="activity-details">
-                    Location: [Location details]<br>
-                    Participants: [Participants details]<br>
-                    Description: [Description details]
-                </div>
+                <img src="fy2025/activity10.jpg" alt="Activity 10">
+                <h3>活動10タイトル</h3>
+                <p>活動10の詳細がここに入ります。</p>
             </div>
         </div>
     </section>
+    <section id="recognition">
+        <h2>Recognition</h2>
+        <p>Recognition content goes here.</p>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Google Form link: <a href="https://example.com/form">Contact Us</a></p>
+    </section>
+    <footer>
+        <p>&copy; 2026 Koto Eiyo HP</p>
+    </footer>
 </body>
 </html>
