@@ -200,9 +200,6 @@ button:hover {
   .activity-items {
     grid-template-columns: 1fr;
   }
-  .activity-card img {
-    height: 150px;
-  }
   .activity-card-content {
     padding: 12px;
   }
@@ -215,4 +212,32 @@ button:hover {
   .activity-details {
     font-size: 0.8rem;
   }
+}
+
+/* スライダーボタンはglobalのbuttonスタイルを上書き */
+.slider-btn {
+  background: rgba(0,0,0,0.38) !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  font-size: 1rem !important;
+  font-weight: normal !important;
+  box-shadow: none !important;
+  width: 30px;
+  height: 30px;
+}
+.slider-btn:hover {
+  background: rgba(0,120,215,0.7) !important;
+}
+.slider-dot {
+  background: rgba(255,255,255,0.55) !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  font-size: 0 !important;
+  box-shadow: none !important;
+  width: 7px !important;
+  height: 7px !important;
+  min-width: unset !important;
+}
+.slider-dot.active {
+  background: #fff !important;
 }

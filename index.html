@@ -3,10 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>江東区地域活動栄養士会</title>
+
+    <!-- SEO: タイトル・ディスクリプション -->
+    <title>江東区地域活動栄養士会 | 地域の食育・健康増進を支える栄養士ネットワーク</title>
+    <meta name="description" content="江東区地域活動栄養士会は、江東区を拠点に食育・栄養改善・健康増進活動を行う栄養士の団体です。田植え体験・料理教室・防災食体験など地域密着の活動実績をご紹介します。" />
+    <meta name="keywords" content="江東区,栄養士,食育,健康増進,地域活動,料理教室,田植え,防災食,栄養改善,江東区地域活動栄養士会" />
+    <meta name="author" content="江東区地域活動栄養士会" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://koto-eiyo-hp.github.io/" />
+
+    <!-- OGP (SNSシェア用) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="江東区地域活動栄養士会 | 地域の食育・健康増進を支える栄養士ネットワーク" />
+    <meta property="og:description" content="江東区を拠点に食育・栄養改善・健康増進活動を行う栄養士の団体です。田植え体験・料理教室・防災食体験など地域密着の活動実績をご紹介します。" />
+    <meta property="og:url" content="https://koto-eiyo-hp.github.io/" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:image" content="https://koto-eiyo-hp.github.io/fy2025/%E9%A3%9F%E3%81%A8%E8%BE%B2PJ%E2%91%A0%E7%94%B0%E6%A4%8D%E3%81%88.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="江東区地域活動栄養士会" />
+    <meta name="twitter:description" content="江東区を拠点に食育・栄養改善・健康増進活動を行う栄養士の団体です。" />
+
+    <!-- 構造化データ (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "江東区地域活動栄養士会",
+      "description": "江東区を拠点に食育・栄養改善・健康増進活動を行う栄養士の団体",
+      "url": "https://koto-eiyo-hp.github.io/",
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "江東区"
+      },
+      "knowsAbout": ["食育", "栄養改善", "健康増進", "料理教室"]
+    }
+    </script>
+
     <link rel="stylesheet" href="style.css" />
     <style>
-      /* Googleフォームの埋め込みをレスポンシブにする簡易スタイル */
+      /* ===== Googleフォーム埋め込み ===== */
       .form-embed {
         position: relative;
         width: 100%;
@@ -19,54 +56,150 @@
         border: 0;
       }
       @media (max-width: 600px) {
-        .form-embed iframe {
-          height: 1000px;
-        }
+        .form-embed iframe { height: 1000px; }
       }
-      /* 活動実績セクション用スタイル */
-      .activity-report {
-        margin-top: 30px;
+
+      /* ===== 活動実績セクション ===== */
+      .activity-report { margin-top: 2rem; }
+      .activity-report h3 {
+        font-size: 1.15rem;
+        color: #0078d7;
+        margin-bottom: 1.2rem;
+        border-left: 4px solid #0078d7;
+        padding-left: 0.7rem;
       }
+
+      /* グリッド: PC=3列, タブレット=2列, スマホ=1列 */
       .activity-items {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-        margin-top: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 16px;
       }
+      @media (max-width: 768px) {
+        .activity-items { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      }
+      @media (max-width: 480px) {
+        .activity-items { grid-template-columns: 1fr; gap: 12px; }
+      }
+
+      /* カード共通 */
       .activity-card {
-        border: 1px solid #ddd;
-        border-radius: 8px;
+        border: 1px solid #dde6f0;
+        border-radius: 10px;
         overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0,120,215,0.07);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        display: flex;
+        flex-direction: column;
       }
       .activity-card:hover {
         transform: translateY(-4px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        box-shadow: 0 6px 18px rgba(0,120,215,0.13);
       }
-      .activity-card img {
+
+      /* ---- 写真ありカード ---- */
+      /* スライダーラッパー */
+      .slider-wrap {
+        position: relative;
         width: 100%;
-        height: 200px;
-        object-fit: cover;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        background: #e8f0f8;
       }
+      .slider-wrap img {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        pointer-events: none;
+      }
+      .slider-wrap img.active { opacity: 1; }
+
+      /* 複数写真のナビボタン */
+      .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.38);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 30px; height: 30px;
+        font-size: 1rem;
+        line-height: 1;
+        cursor: pointer;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        transition: background 0.2s;
+      }
+      .slider-btn:hover { background: rgba(0,120,215,0.7); }
+      .slider-btn.prev { left: 6px; }
+      .slider-btn.next { right: 6px; }
+
+      /* ドット */
+      .slider-dots {
+        position: absolute;
+        bottom: 6px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 5px;
+        z-index: 2;
+      }
+      .slider-dot {
+        width: 7px; height: 7px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.55);
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition: background 0.2s;
+      }
+      .slider-dot.active { background: #fff; }
+
+      /* ---- 写真なしカード ---- */
+      .card-no-photo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 4 / 3;
+        background: linear-gradient(135deg, #eaf3fb 0%, #ddeeff 100%);
+        font-size: 2.8rem;
+      }
+
+      /* カード本文 */
       .activity-card-content {
-        padding: 15px;
+        padding: 12px 14px 14px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
       }
       .activity-date {
-        font-size: 0.9rem;
-        color: #666;
-        margin-bottom: 8px;
+        font-size: 0.8rem;
+        color: #888;
+        font-weight: 500;
       }
       .activity-title {
-        font-weight: bold;
-        margin-bottom: 8px;
-        color: #333;
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #1a2a3a;
+        line-height: 1.4;
       }
       .activity-details {
-        font-size: 0.85rem;
+        font-size: 0.82rem;
         color: #555;
-        line-height: 1.5;
+        line-height: 1.6;
+        margin-top: 4px;
       }
+      .activity-details strong { color: #0078d7; }
     </style>
   </head>
   <body>
@@ -101,51 +234,87 @@
         <div class="activity-report">
           <h3>📅 令和7年度（2025-2026）の活動実績</h3>
           <div class="activity-items">
-            <!-- 食と農のプロジェクト①田植え -->
-            <div class="activity-card">
-              <img src="fy2025/IMG_20250601_111113%20(%E5%B0%8F).jpg" alt="食と農のプロジェクト①田植え">
-              <div class="activity-card-content">
-                <div class="activity-date">2025年6月1日</div>
-                <div class="activity-title">食と農のPJ①田植え</div>
-                <div class="activity-details">
-                  <strong>場所：</strong>埼玉県川越市<br>
-                  <strong>参加者：</strong>小学生・保護者 6名<br>
-                  <strong>内容：</strong>小2の児童とその保護者で田植えを体験
-                </div>
-              </div>
-            </div>
 
-            <!-- 元加賀幼稚園食育プログラム① -->
-            <div class="activity-card">
-              <img src="fy2025/1765160552646%20(%E5%B0%8F).jpg" alt="元加賀幼稚園食育プログラム①">
+            <!-- 元加賀幼稚園食育プログラム① (写真なし) -->
+            <article class="activity-card">
+              <div class="card-no-photo" aria-hidden="true">🌿</div>
               <div class="activity-card-content">
                 <div class="activity-date">2025年4月23日</div>
-                <div class="activity-title">元加賀幼稚園食育プログラム①</div>
+                <div class="activity-title">元加賀幼稚園 食育プログラム①</div>
                 <div class="activity-details">
                   <strong>場所：</strong>元加賀幼稚園<br>
                   <strong>参加者：</strong>園児 19名（年長・年中）<br>
                   <strong>内容：</strong>食育プログラムの実施
                 </div>
               </div>
-            </div>
+            </article>
 
-            <!-- 食と農のプロジェクト②稲刈り -->
-            <div class="activity-card">
-              <img src="fy2025/IMG_20250601_135835%20(%E5%B0%8F).jpg" alt="食と農のプロジェクト②稲刈り">
+            <!-- 食と農のプロジェクト①田植え (3枚) -->
+            <article class="activity-card">
+              <div class="slider-wrap" data-slider>
+                <img src="fy2025/食と農PJ①田植え.jpg"     alt="食と農のプロジェクト①田植え" class="active" loading="lazy">
+                <img src="fy2025/食と農PJ①田植え (2).jpg" alt="食と農のプロジェクト①田植え 2枚目" loading="lazy">
+                <img src="fy2025/食と農PJ①田植え (3).jpg" alt="食と農のプロジェクト①田植え 3枚目" loading="lazy">
+                <button class="slider-btn prev" aria-label="前の写真">&#8249;</button>
+                <button class="slider-btn next" aria-label="次の写真">&#8250;</button>
+                <div class="slider-dots">
+                  <button class="slider-dot active" aria-label="1枚目"></button>
+                  <button class="slider-dot" aria-label="2枚目"></button>
+                  <button class="slider-dot" aria-label="3枚目"></button>
+                </div>
+              </div>
+              <div class="activity-card-content">
+                <div class="activity-date">2025年6月1日</div>
+                <div class="activity-title">食と農のPJ① 田植え</div>
+                <div class="activity-details">
+                  <strong>場所：</strong>埼玉県川越市<br>
+                  <strong>参加者：</strong>小学生・保護者 6名<br>
+                  <strong>内容：</strong>小2の児童とその保護者で田植えを体験
+                </div>
+              </div>
+            </article>
+
+            <!-- 研修会①食事摂取基準2025版 (1枚) -->
+            <article class="activity-card">
+              <div class="slider-wrap">
+                <img src="fy2025/研修会①食事摂取基準2025版(高橋東生先生).jpg" alt="研修会①食事摂取基準2025版" class="active" loading="lazy">
+              </div>
+              <div class="activity-card-content">
+                <div class="activity-date">2025年6月20日</div>
+                <div class="activity-title">研修会① 食事摂取基準2025版</div>
+                <div class="activity-details">
+                  <strong>講師：</strong>高橋東生先生<br>
+                  <strong>内容：</strong>食事摂取基準2025年版の解説・研修
+                </div>
+              </div>
+            </article>
+
+            <!-- 食と農のプロジェクト②稲刈り (2枚) -->
+            <article class="activity-card">
+              <div class="slider-wrap" data-slider>
+                <img src="fy2025/食と農PJ②稲刈り.jpg"     alt="食と農のプロジェクト②稲刈り" class="active" loading="lazy">
+                <img src="fy2025/食と農PJ②稲刈り (2).jpg" alt="食と農のプロジェクト②稲刈り 2枚目" loading="lazy">
+                <button class="slider-btn prev" aria-label="前の写真">&#8249;</button>
+                <button class="slider-btn next" aria-label="次の写真">&#8250;</button>
+                <div class="slider-dots">
+                  <button class="slider-dot active" aria-label="1枚目"></button>
+                  <button class="slider-dot" aria-label="2枚目"></button>
+                </div>
+              </div>
               <div class="activity-card-content">
                 <div class="activity-date">2025年9月7日</div>
-                <div class="activity-title">食と農のPJ②稲刈り</div>
+                <div class="activity-title">食と農のPJ② 稲刈り</div>
                 <div class="activity-details">
                   <strong>場所：</strong>埼玉県川越市<br>
                   <strong>参加者：</strong>小学生・保護者 8名<br>
-                  <strong>内容：</strong>稲刈り体験
+                  <strong>内容：</strong>稲刈り体験・学習
                 </div>
               </div>
-            </div>
+            </article>
 
-            <!-- 区民まつり -->
-            <div class="activity-card">
-              <img src="fy2025/1765160552782%20(%E5%B0%8F).jpg" alt="区民まつり">
+            <!-- 区民まつり 食品衛生推進 (写真なし) -->
+            <article class="activity-card">
+              <div class="card-no-photo" aria-hidden="true">🏮</div>
               <div class="activity-card-content">
                 <div class="activity-date">2025年10月19日</div>
                 <div class="activity-title">区民まつり 食品衛生推進</div>
@@ -154,53 +323,86 @@
                   <strong>内容：</strong>食品衛生推進委員として、リーフレット配布・相談対応
                 </div>
               </div>
-            </div>
+            </article>
 
-            <!-- 第四大島小学校四大まつり -->
-            <div class="activity-card">
-              <img src="fy2025/1ea3f66f-62a3-4979-95d1-1c4788f034c9_20251003_143708_0000%20(%E5%B0%8F).jpg" alt="第四大島小学校四大まつり">
+            <!-- 第四大島小学校四大まつり (写真なし) -->
+            <article class="activity-card">
+              <div class="card-no-photo" aria-hidden="true">🥕</div>
               <div class="activity-card-content">
                 <div class="activity-date">2025年11月8日</div>
-                <div class="activity-title">第四大島小学校四大まつり</div>
+                <div class="activity-title">第四大島小学校 四大まつり</div>
                 <div class="activity-details">
                   <strong>場所：</strong>第四大島小学校<br>
                   <strong>参加者：</strong>小学生・未就学児 49名<br>
                   <strong>内容：</strong>栄養士会ブース出展、食育の話、野菜スタンプ
                 </div>
               </div>
-            </div>
+            </article>
 
-            <!-- 親子料理教室 -->
-            <div class="activity-card">
-              <img src="fy2025/IMG20251005103854%20(%E5%B0%8F).jpg" alt="親子料理教室">
+            <!-- 食と農のPJ③ 親子料理教室 (7枚) -->
+            <article class="activity-card">
+              <div class="slider-wrap" data-slider>
+                <img src="fy2025/食と農PJ③親子料理教室.jpg"     alt="食と農のPJ③親子料理教室" class="active" loading="lazy">
+                <img src="fy2025/食と農PJ③親子料理教室 (2).jpg" alt="食と農のPJ③親子料理教室 2枚目" loading="lazy">
+                <img src="fy2025/食と農PJ③親子料理教室 (3).jpg" alt="食と農のPJ③親子料理教室 3枚目" loading="lazy">
+                <img src="fy2025/食と農PJ③親子料理教室 (4).jpg" alt="食と農のPJ③親子料理教室 4枚目" loading="lazy">
+                <img src="fy2025/食と農PJ③親子料理教室 (5).jpg" alt="食と農のPJ③親子料理教室 5枚目" loading="lazy">
+                <img src="fy2025/食と農PJ③親子料理教室 (6).jpg" alt="食と農のPJ③親子料理教室 6枚目" loading="lazy">
+                <img src="fy2025/食と農PJ③親子料理教室 (7).jpg" alt="食と農のPJ③親子料理教室 7枚目" loading="lazy">
+                <button class="slider-btn prev" aria-label="前の写真">&#8249;</button>
+                <button class="slider-btn next" aria-label="次の写真">&#8250;</button>
+                <div class="slider-dots">
+                  <button class="slider-dot active" aria-label="1枚目"></button>
+                  <button class="slider-dot" aria-label="2枚目"></button>
+                  <button class="slider-dot" aria-label="3枚目"></button>
+                  <button class="slider-dot" aria-label="4枚目"></button>
+                  <button class="slider-dot" aria-label="5枚目"></button>
+                  <button class="slider-dot" aria-label="6枚目"></button>
+                  <button class="slider-dot" aria-label="7枚目"></button>
+                </div>
+              </div>
               <div class="activity-card-content">
                 <div class="activity-date">2025年12月7日</div>
-                <div class="activity-title">食と農のPJ 親子料理教室</div>
+                <div class="activity-title">食と農のPJ③ 親子料理教室</div>
                 <div class="activity-details">
                   <strong>場所：</strong>総合区民センター調理室<br>
                   <strong>参加者：</strong>小学生・保護者 12名<br>
                   <strong>内容：</strong>自分たちで田植えした収穫米を使った調理実習
                 </div>
               </div>
-            </div>
+            </article>
 
-            <!-- プレママ食事講話 -->
-            <div class="activity-card">
-              <img src="fy2025/1765094605229%20(%E5%B0%8F).jpg" alt="プレママ食事講話">
+            <!-- プレママ食事講話 (写真なし) -->
+            <article class="activity-card">
+              <div class="card-no-photo" aria-hidden="true">🤰</div>
               <div class="activity-card-content">
                 <div class="activity-date">2025年12月13日</div>
-                <div class="activity-title">プレママ食事講話</div>
+                <div class="activity-title">プレママ 食事講話</div>
                 <div class="activity-details">
                   <strong>場所：</strong>南砂みずべ<br>
                   <strong>参加者：</strong>プレママ 4名（夫婦2組）<br>
                   <strong>内容：</strong>助産師の沐浴体験と食事講話
                 </div>
               </div>
-            </div>
+            </article>
 
-            <!-- ラグビー部料理教室① -->
-            <div class="activity-card">
-              <img src="fy2025/IMG_20260424_192747%20(%E5%B0%8F).jpg" alt="ラグビー部料理教室①">
+            <!-- 研修会②調理自習 (1枚) -->
+            <article class="activity-card">
+              <div class="slider-wrap">
+                <img src="fy2025/研修会②調理自習.jpg" alt="研修会②調理自習" class="active" loading="lazy">
+              </div>
+              <div class="activity-card-content">
+                <div class="activity-date">2025年12月22日</div>
+                <div class="activity-title">研修会② 調理自習</div>
+                <div class="activity-details">
+                  <strong>内容：</strong>会員による調理自習・スキルアップ研修
+                </div>
+              </div>
+            </article>
+
+            <!-- 本郷中学ラグビー部 料理教室① (写真なし) -->
+            <article class="activity-card">
+              <div class="card-no-photo" aria-hidden="true">🏉</div>
               <div class="activity-card-content">
                 <div class="activity-date">2025年12月22日</div>
                 <div class="activity-title">本郷中学ラグビー部 料理教室①</div>
@@ -210,11 +412,13 @@
                   <strong>内容：</strong>料理教室と栄養教育
                 </div>
               </div>
-            </div>
+            </article>
 
-            <!-- 防災食イベント -->
-            <div class="activity-card">
-              <img src="fy2025/IMG20260301100022%20(%E5%B0%8F).jpg" alt="防災食イベント">
+            <!-- ら・館まつり 防災食体験 (1枚) -->
+            <article class="activity-card">
+              <div class="slider-wrap">
+                <img src="fy2025/ら・館まつり防災食体験.jpg" alt="ら・館まつり防災食体験" class="active" loading="lazy">
+              </div>
               <div class="activity-card-content">
                 <div class="activity-date">2026年3月1日</div>
                 <div class="activity-title">ら・館まつり 防災食体験</div>
@@ -224,11 +428,11 @@
                   <strong>内容：</strong>「防災食をたべてみよう」啓発活動
                 </div>
               </div>
-            </div>
+            </article>
 
-            <!-- ラグビー部料理教室② -->
-            <div class="activity-card">
-              <img src="fy2025/IMG_20260424_194009%20(%E5%B0%8F).jpg" alt="ラグビー部料理教室②">
+            <!-- 本郷中学ラグビー部 料理教室② (写真なし) -->
+            <article class="activity-card">
+              <div class="card-no-photo" aria-hidden="true">🍳</div>
               <div class="activity-card-content">
                 <div class="activity-date">2026年3月12日</div>
                 <div class="activity-title">本郷中学ラグビー部 料理教室②</div>
@@ -238,9 +442,10 @@
                   <strong>内容：</strong>料理教室と栄養教育
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+            </article>
+
+          </div><!-- /.activity-items -->
+        </div><!-- /.activity-report -->
       </section>
       <section id="recognition" class="purpose">
         <h2>🤝 地域との連携</h2>
@@ -268,5 +473,37 @@
         <p>&copy; 2025 江東区地域活動栄養士会</p>
       </footer>
     </div>
+    <script>
+      // シンプルな画像スライダー
+      document.querySelectorAll('[data-slider]').forEach(function(wrap) {
+        var imgs  = Array.from(wrap.querySelectorAll('img'));
+        var dots  = Array.from(wrap.querySelectorAll('.slider-dot'));
+        var prev  = wrap.querySelector('.slider-btn.prev');
+        var next  = wrap.querySelector('.slider-btn.next');
+        var cur   = 0;
+
+        function show(n) {
+          imgs[cur].classList.remove('active');
+          dots[cur].classList.remove('active');
+          cur = (n + imgs.length) % imgs.length;
+          imgs[cur].classList.add('active');
+          dots[cur].classList.add('active');
+        }
+
+        if (prev) prev.addEventListener('click', function() { show(cur - 1); });
+        if (next) next.addEventListener('click', function() { show(cur + 1); });
+        dots.forEach(function(dot, i) {
+          dot.addEventListener('click', function() { show(i); });
+        });
+
+        // タッチスワイプ対応
+        var startX = 0;
+        wrap.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, {passive: true});
+        wrap.addEventListener('touchend', function(e) {
+          var diff = startX - e.changedTouches[0].clientX;
+          if (Math.abs(diff) > 40) show(diff > 0 ? cur + 1 : cur - 1);
+        }, {passive: true});
+      });
+    </script>
   </body>
 </html>
