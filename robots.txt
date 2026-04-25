@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sko-jp.github.io/koto-eiyo-hp.github.io/sitemap.xml
